@@ -1,12 +1,12 @@
-// import the CSS framework
+// import the CSS framework from the bootstrap_sass gem
 @import "bootstrap";
 
-// make all images responsive by default
+// make all images responsive by default. all images will resize to accomodate browser windows of varying sizes
 img {
   @extend .img-responsive;
   margin: 0 auto;
   }
-// override for the 'Home' navigation link
+// override for the 'Home' navigation link. Force font size of navbar-brand navigation link to be same size as fonts specified in enclosing container
 .navbar-brand {
   font-size: inherit;
   }
