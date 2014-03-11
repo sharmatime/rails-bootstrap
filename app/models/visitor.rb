@@ -24,3 +24,10 @@ class Visitor < ActiveRecord::Base
 
 end
 
+#the update_spreadsheet method will be called from the controller once the form data is secure and validated 
+#Create a connection to GoogleDrive by passing your credentials to the login method. 
+#We look for a spreadsheet_by_title. If it doesn't exist, we create one. 
+#A single spredsheet can contain multiple worksheets. We'll use only one worksheet to store our data designated as worksheet 0.
+#To add a row to the spreadsheet we need to add 1 + ws.num_rows (because currently no rows exist)
+#Add data on a cell by cell basis. We refer to the current instance of the class by using the keyword self
+#setting up the spreadsheet doesn't save the data. We explicitlty call the worksheet save method. 

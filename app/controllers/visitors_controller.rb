@@ -11,10 +11,12 @@ class VisitorsController < ApplicationController
   		@visitor = Visitor.new(secure_params)
   		#Remember, class Visitor inherts behaviour from the ActiveRecord parent class, which has a .valid method to validate requirements
   		if @visitor.valid?
+  			#calls the method from Visitors class to update the google spreadsheet with visitor favorite and comment
+  			@visitor.update_spreadsheet
   			#When the view file is rendered, the messages partial will be called. The flash hash contains :alert => message
   			#The alert variable will dictate which type of alert box is rendered, using the ternary operator
   			#Ultmately renders a div which is styled with bootstrap classes to deliever an alert box with the message from the flash hash
-  			flash.now[:notice] = "Chose #{@visitor.favorite}."
+  			flash.now[:notice] = "You chose #{@visitor.favorite}."
   			render :new
   		else
   		#display homepage with form errors
