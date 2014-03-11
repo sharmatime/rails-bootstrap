@@ -6,30 +6,37 @@
 		<li data-target="#myCarousel" data-slide-to="1"></li>
 		<li data-target="#myCarousel" data-slide-to="2"></li>
 		<li data-target="#myCarousel" data-slide-to="3"></li>
+		<li data-target="#myCarousel" data-slide-to="4"></li>
 	</ol>
 	<div class="carousel-inner">
 		<div class="item active">
-			<img src="http://lorempixel.com/1170/800/cats/9">
+			<img src="http://lorempixel.com/1170/800/cats/9" class="img_scale">
 			<div class="carousel-caption text-center">
 				<h4><%= Visitor::IMAGE_LABELS[0] %></h4>
 			</div>
 		</div>
 		<div class="item">
-			<img src="http://lorempixel.com/1170/800/cats/7">
+			<img src="http://lorempixel.com/1170/800/cats/7" class="img_scale">
 			<div class="carousel-caption text-center">
 				<h4><%= Visitor::IMAGE_LABELS[1] %></h4>
 			</div>
 		</div>
 		<div class="item">
-			<img src="http://lorempixel.com/1170/800/cats/3">
+			<img src="http://lorempixel.com/1170/800/cats/3" class="img_scale">
 			<div class="carousel-caption text-center">
 				<h4><%= Visitor::IMAGE_LABELS[2] %></h4>
 			</div>
 		</div>
 		<div class="item">
-			<img src="http://lorempixel.com/1170/800/cats/5">
+			<img src="http://lorempixel.com/1170/800/cats/5" class="img_scale">
 			<div class="carousel-caption text-center">
 				<h4><%= Visitor::IMAGE_LABELS[3] %></h4>
+			</div>
+		</div>
+		<div class="item">
+			<%= image_tag "coco1.jpeg", :class => "img_scale" %>
+			<div class="carousel-caption text-center">
+				<h4><%= Visitor::IMAGE_LABELS[4] %></h4>
 			</div>
 		</div>
 	</div>
@@ -42,14 +49,14 @@
 		<%= f.error_notification %> <!-- form validation from ActiveRecord --> 
 		<!--div class="container"--> 
 			<div class="row">
-				<div class="col-md-4 col-md-offset-4">					
+				<div class="col-md-4 col-md-offset-4 simpleformtext">					
 					<%= f.input :favorite, :collection => Visitor::IMAGE_LABELS, label: false, as: :select, prompt: 'Select a favorite...', :input_html => {:style => "width: 200px"} %>
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4">
-					<%= f.input :comment, label: false, :placeholder => 'Add a comment...', :class => "col-md-12" %>
+					<%= f.input :comment, label: false, :placeholder => 'Add a comment...', :class => "col-md-12", :input_html => {:style => "width: 200px"} %>
 				</div>
 			</div>
 			<br>
